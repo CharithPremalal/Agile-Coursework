@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- START: Head-->
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fuel App</title>
+    <link rel="shortcut icon" href="dist/images/logo.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- START: Template CSS-->
+    <link rel="stylesheet" href="dist/vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="dist/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="dist/vendors/flags-icon/css/flag-icon.min.css">
+    <!-- END Template CSS-->
+
+    <!-- START: Page CSS-->
+    <link rel="stylesheet" href="dist/vendors/quill/quill.snow.css" />
+    <!-- END: Page CSS-->
+
+    <!-- START: Custom CSS-->
+    <link rel="stylesheet" href="dist/css/main.css">
+    <!-- END: Custom CSS-->
+</head>
+<!-- END Head-->
+
+<!-- START: Body-->
+
+<body id="main-container" class="default">
+    <!-- START: Pre Loader-->
+    <div class="se-pre-con">
+        <div class="loader"></div>
+    </div>
+    <!-- END: Pre Loader-->
+
+    <!-- START: Header-->
+    <div id="header-fix" class="header fixed-top">
+        <div class="site-width">
+            <nav class="navbar navbar-expand-lg  p-0">
+                <div class="navbar-header  h-100 h4 mb-0 align-self-center logo-bar text-left">
+                    <a href="index.html" class="horizontal-logo text-left">
+                        <span class="h4 font-weight-bold align-self-center mb-0 ml-auto">Fuel</span>
+                    </a>
+                </div>
+                <div class="navbar-header h4 mb-0 text-center h-100 collapse-menu-bar">
+                    <a href="#" class="sidebarCollapse" id="collapse"><i class="icon-menu"></i></a>
+                </div>
+
+                <form class="float-left d-none d-lg-block search-form">
+                    <div class="form-group mb-0 position-relative">
+                        <input type="text" class="form-control border-0 rounded bg-search pl-5" placeholder="Search anything...">
+                        <div class="btn-search position-absolute top-0">
+                            <a href="#"><i class="h6 icon-magnifier"></i></a>
+                        </div>
+                        <a href="#" class="position-absolute close-button mobilesearch d-lg-none" data-toggle="dropdown" aria-expanded="false"><i class="icon-close h5"></i>                               
+                            </a>
+
+                    </div>
+                </form>
+                <div class="navbar-right ml-auto h-100">
+                    <ul class="ml-auto p-0 m-0 list-unstyled d-flex top-icon h-100">
+                        <li class="d-inline-block align-self-center  d-block d-lg-none">
+                            <a href="#" class="nav-link mobilesearch" data-toggle="dropdown" aria-expanded="false"><i class="icon-magnifier h4"></i>                               
+                                </a>
+                        </li>
+                        <li class="dropdown align-self-center d-inline-block">
+                            <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false"><i class="icon-bell h4"></i>
+                                    <span class="badge badge-default"> <span class="">
+                                        </span><span class="ring-point">
+                                        </span> </span>
+                                </a>
+                        </li>
+                        <li class="dropdown user-profile align-self-center d-inline-block">
+                            <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                                <div class="media">
+                                    <img src="dist/images/avatr.png" class="d-flex img-fluid rounded-circle" width="29">
+                                </div>
+                            </a>
+
+                            <div class="dropdown-menu border dropdown-menu-right p-0">
+                                <a href="#" class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-pencil mr-2 h6 mb-0"></span> Edit Profile</a>
+                                <a href="user-profile.html" class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-user mr-2 h6 mb-0"></span> View Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-support mr-2 h6  mb-0"></span> Help Center</a>
+                                <a href="#" class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-settings mr-2 h6 mb-0"></span> Account Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="page-login.html" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                                    <span class="icon-logout mr-2 h6  mb-0"></span> Sign Out</a>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- END: Header-->
+
+    <!-- START: Main Menu-->
+    <div class="sidebar">
+        <div class="site-width">
+
+            <!-- START: Menu-->
+            <ul id="side-menu" class="sidebar-menu">
+                <li class="dropdown active"><a href="#"><i class="icon-home mr-1"></i> Dashboard</a>
+                    <ul>
+                        <li><a href="index.html"><i class="icon-grid"></i> Analytic</a></li>
+                        <li><a href="app-employeelist.html"><i class="icon-people"></i> Employee List</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><i class="icon-layers mr-1"></i>Manage</a>
+                    <ul>
+                        <li class="active"><a href="app-to-do.html"><i class="icon-support"></i> Todo</a></li>
+                        <li><a href="app-taskboard.html"><i class="icon-event"></i> Task Board</a></li>
+                        <li><a href="app-notes.html"><i class="icon-tag"></i> Notes</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><i class="icon-people mr-1"></i> Profile</a>
+                    <ul>
+                        <li><a href="user-profile.html"><i class="icon-user"></i>View Profile</a></li>
+                        <li><a href="#"><i class="icon-pencil"></i> Edit Profile</a></li>
+                        <li><a href="#"><i class="icon-settings"></i> Account Settings</a></li>
+                        <li><a href="page-lockscreen.html"><i class="icon-lock"></i> Lockscreen</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- END: Menu-->
+            <ol class="breadcrumb bg-transparent align-self-center m-0 p-0 ml-auto">
+                <li class="breadcrumb-item"><a href="#">Application</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- START: Main Content-->
+    <main>
+        <div class="container-fluid site-width">
+            <!-- START: Breadcrumbs-->
+            <div class="row ">
+                <div class="col-12  align-self-center">
+                    <div class="sub-header mt-3 py-3 align-self-center d-sm-flex w-100 rounded">
+                        <div class="w-sm-100 mr-auto">
+                            <h4 class="mb-0">App To Do</h4>
+                        </div>
+
+                        <ol class="breadcrumb bg-transparent align-self-center m-0 p-0">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Todo</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Breadcrumbs-->
+
+            <!-- START: Card Data-->
+            <div class="row row-eq-height">
+                <div class="col-12 col-lg-2 mt-3 todo-menu-bar flip-menu pr-lg-0">
+                    <a href="#" class="d-inline-block d-lg-none mt-1 flip-menu-close"><i class="icon-close"></i></a>
+                    <div class="card border h-100 todo-menu-section">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <a href="#" class="bg-primary py-2 px-2 rounded m-auto text-white" data-toggle="modal" data-target="#newtodo">
+                                <i class="icon-plus align-middle text-white"></i> <span>Add New</span>
+                            </a>
+                            <!-- Add Todo -->
+                            <div class="modal fade" id="newtodo">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">
+                                                <i class="icon-pencil"></i> Add Todo
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <i class="icon-close"></i>
+                                                </button>
+                                        </div>
+                                        <form class="add-todo-form">
+                                            <div class="modal-body">
+
+                                                <div class="form-group">
+                                                    <label for="title" class="col-form-label">Title</label>
+                                                    <input type="text" class="form-control" id="title">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="description" class="col-form-label">Description</label>
+                                                    <textarea class="form-control" rows="10" id="description"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="chkbox">                                                        
+                                                            <input type="checkbox" class="starred" id="starred">
+                                                            <span class="checkmark"></span>
+                                                            Starred
+                                                        </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="chkbox">                                                        
+                                                            <input type="checkbox" class="important" id="important">
+                                                            <span class="checkmark"></span>
+                                                            Important
+                                                        </label>
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary add-todo">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Edit Todo -->
+                            <div class="modal fade" id="edittodo">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">
+                                                <i class="icon-pencil"></i> Edit Todo
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <i class="icon-close"></i>
+                                                </button>
+                                        </div>
+                                        <form class="edit-todo-form">
+                                            <div class="modal-body">
+
+                                                <div class="form-group">
+                                                    <label for="title" class="col-form-label">Title</label>
+                                                    <input type="text" class="form-control" id="edit-title">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="description" class="col-form-label">Description</label>
+                                                    <textarea class="form-control" rows="10" id="edit-description"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="chkbox">                                                        
+                                                            <input type="checkbox" class="starred" id="edit-starred">
+                                                            <span class="checkmark"></span>
+                                                            Starred
+                                                        </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="chkbox">                                                        
+                                                            <input type="checkbox" class="important" id="edit-important">
+                                                            <span class="checkmark"></span>
+                                                            Important
+                                                        </label>
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <input type="hidden" id="edit-date">
+                                                <button type="submit" class="btn btn-primary add-todo">Update</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <ul class="nav flex-column todo-menu">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" data-todotype="todo-item">
+                                    <i class="icon-list"></i> All
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-todotype="starred">
+                                    <i class="icon-star"></i> Starred
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#important" data-todotype="important">
+                                    <i class="icon-exclamation"></i> Important
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#completed" data-todotype="completed">
+                                    <i class="icon-check"></i> Completed
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#trashed" data-todotype="trashed">
+                                    <i class="icon-trash"></i> Trashed
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-12 col-lg-10 mt-3 pl-lg-0">
+                    <div class="card border h-100 todo-list-section">
+                        <div class="card-header border-bottom p-1 d-flex">
+                            <a href="#" class="d-inline-block d-lg-none flip-menu-toggle"><i class="icon-menu"></i></a>
+                            <input type="text" class="form-control border-0 p-2 w-100 h-100 todo-search" placeholder="Search ...">
+                        </div>
+                        <div class="card-body p-0">
+
+                            <div class="scrollertodo">
+                                <ul class="todo-list">
+                                    <li class="todo-item starred completed">
+                                        <label class="chkbox">                                                        
+                                                <input type="checkbox" checked="checked">
+                                                <span class="checkmark mt-2"></span>
+                                            </label>
+                                        <div class="todo-content">
+                                            <h3>Prepare daily reports of fuel, oil, and accessory sales.</h3>
+                                            <p class="text-muted mb-0 font-weight-bold todo-date">June 8, 2020</p>
+                                            <p class="small-content text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                                                it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                                                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="icon-star mr-2 font-15"></i>
+                                            <i class="icon-exclamation font-15 mr-2"></i>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-options-vertical font-15"></i></a>
+                                            <div class="dropdown-menu p-0 m-0 dropdown-menu-right">
+                                                <a class="dropdown-item edit-todo" href="#">Edit</a>
+                                                <a class="dropdown-item delete" href="#">Delete</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="todo-item important">
+                                        <label class="chkbox">                                                        
+                                                <input type="checkbox">
+                                                <span class="checkmark mt-2"></span>
+                                            </label>
+                                        <div class="todo-content">
+                                            <h3>Maintain customer records and follow up periodically with telephone, mail, or personal reminders of service due.</h3>
+                                            <p class="text-muted mb-0 font-weight-bold todo-date">May 22, 2020</p>
+                                            <p class="small-content text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                                                it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                                                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="icon-star mr-2 font-15"></i>
+                                            <i class="icon-exclamation font-15 mr-2"></i>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-options-vertical font-15"></i></a>
+                                            <div class="dropdown-menu p-0 m-0 dropdown-menu-right">
+                                                <a class="dropdown-item edit-todo" href="#">Edit</a>
+                                                <a class="dropdown-item delete" href="#">Delete</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="todo-item">
+                                        <label class="chkbox">                                                        
+                                                <input type="checkbox">
+                                                <span class="checkmark mt-2"></span>
+                                            </label>
+                                        <div class="todo-content">
+                                            <h3>Manifest is available and maintained.</h3>
+                                            <p class="text-muted mb-0 font-weight-bold todo-date">May 12, 2020</p>
+                                            <p class="small-content text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                                                it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                                                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="icon-star mr-2 font-15"></i>
+                                            <i class="icon-exclamation font-15 mr-2"></i>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-options-vertical font-15"></i></a>
+                                            <div class="dropdown-menu p-0 m-0 dropdown-menu-right">
+                                                <a class="dropdown-item edit-todo" href="#">Edit</a>
+                                                <a class="dropdown-item delete" href="#">Delete</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="todo-item starred completed">
+                                        <label class="chkbox">                                                        
+                                                <input type="checkbox" checked="checked">
+                                                <span class="checkmark mt-2"></span>
+                                            </label>
+                                        <div class="todo-content">
+                                            <h3>Dangerous goods register is available and maintained.</h3>
+                                            <p class="text-muted mb-0 font-weight-bold todo-date">April 30, 2020</p>
+                                            <p class="small-content text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                                                it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                                                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="icon-star mr-2 font-15"></i>
+                                            <i class="icon-exclamation font-15 mr-2"></i>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-options-vertical font-15"></i></a>
+                                            <div class="dropdown-menu p-0 m-0 dropdown-menu-right">
+                                                <a class="dropdown-item edit-todo" href="#">Edit</a>
+                                                <a class="dropdown-item delete" href="#">Delete</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="todo-item important trashed">
+                                        <label class="chkbox">                                                        
+                                                <input type="checkbox">
+                                                <span class="checkmark mt-2"></span>
+                                            </label>
+                                        <div class="todo-content">
+                                            <h3>Spill kit is complete and readily available.</h3>
+                                            <p class="text-muted mb-0 font-weight-bold todo-date">April 12, 2020</p>
+                                            <p class="small-content text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                                                it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                                                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="icon-star mr-2 font-15"></i>
+                                            <i class="icon-exclamation font-15 mr-2"></i>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-options-vertical font-15"></i></a>
+                                            <div class="dropdown-menu p-0 m-0 dropdown-menu-right">
+                                                <a class="dropdown-item edit-todo" href="#">Edit</a>
+                                                <a class="dropdown-item delete" href="#">Delete</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="todo-item starred completed trashed">
+                                        <label class="chkbox">                                                        
+                                                <input type="checkbox" checked="checked">
+                                                <span class="checkmark mt-2"></span>
+                                            </label>
+                                        <div class="todo-content">
+                                            <h3>Main emergency stop is routinely tested to ensure it functions properly.</h3>
+                                            <p class="text-muted mb-0 font-weight-bold todo-date">March 18, 2020</p>
+                                            <p class="small-content text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                                                it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                                                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="icon-star mr-2 font-15"></i>
+                                            <i class="icon-exclamation font-15 mr-2"></i>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-options-vertical font-15"></i></a>
+                                            <div class="dropdown-menu p-0 m-0 dropdown-menu-right">
+                                                <a class="dropdown-item edit-todo" href="#">Edit</a>
+                                                <a class="dropdown-item delete" href="#">Delete</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Card DATA-->
+        </div>
+    </main>
+    <!-- END: Content-->
+
+
+
+    <!-- START: Footer-->
+    <!-- <footer class="site-footer">
+        2020 © PICK
+    </footer> -->
+    <!-- END: Footer-->
+
+
+    <!-- START: Back to top-->
+    <a href="#" class="scrollup text-center">
+        <i class="icon-arrow-up"></i>
+    </a>
+    <!-- END: Back to top-->
+
+    <!-- START: Template JS-->
+    <script src="dist/vendors/jquery/jquery-3.3.1.min.js"></script>
+    <script src="dist/vendors/jquery-ui/jquery-ui.min.js"></script>
+    <script src="dist/vendors/moment/moment.js"></script>
+    <script src="dist/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="dist/vendors/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- END: Template JS-->
+
+    <!-- START: APP JS-->
+    <script src="dist/js/app.js"></script>
+    <!-- END: APP JS-->
+
+    <!-- START: Page JS-->
+    <script src="dist/js/todo.js"></script>
+    <!-- END: Page JS-->
+</body>
+<!-- END: Body-->
+
+
+
+</html>
